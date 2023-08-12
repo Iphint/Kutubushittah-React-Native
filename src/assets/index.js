@@ -10,6 +10,9 @@ import IcQuranLogo from './IcQuranLogo.png';
 import IcQuranCard from './IcQuranCard.png';
 import IcReloading from './IcReloading.png';
 import IcSorry from './IcSorry.png';
+import IcMotivation1 from './IcMotivation1.jpeg';
+import IcMotivation2 from './IcMotivation2.jpeg';
+import IcMotivation3 from './IcMotivation3.jpeg';
 
 export {
   Arrow,
@@ -24,4 +27,7 @@ export {
   IcQuranOn,
   IcReloading,
   IcSorry,
+  IcMotivation1,
+  IcMotivation2,
+  IcMotivation3,
 };

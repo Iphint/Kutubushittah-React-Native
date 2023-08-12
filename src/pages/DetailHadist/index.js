@@ -83,8 +83,8 @@ const DetailHadist = () => {
       <Text style={styles.note}>
         Default untuk yang ditampilkan mulai dari 1 - 50
       </Text>
-      {specificHadis ? (
-        <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView style={{height: 450}} showsVerticalScrollIndicator={false}>
+        {specificHadis ? (
           <View style={styles.hadisContainer}>
             <View style={styles.numberContainer}>
               <Text style={styles.number}>{specificHadis.number}</Text>
@@ -94,33 +94,33 @@ const DetailHadist = () => {
               <Text style={styles.translationText}>{specificHadis.id}</Text>
             </View>
           </View>
-        </ScrollView>
-      ) : loading ? (
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: 100,
-          }}>
-          <Text style={{fontSize: 25, fontFamily: 'Poppins-Regular'}}>
-            Loading...
-          </Text>
-        </View>
-      ) : (
-        <ScrollView style={{height: 560}}>
-          {hadisData.map((hadis, index) => (
-            <View key={index} style={styles.hadisContainer}>
-              <View style={styles.numberContainer}>
-                <Text style={styles.number}>{hadis.number}</Text>
+        ) : loading ? (
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 100,
+            }}>
+            <Text style={{fontSize: 25, fontFamily: 'Poppins-Regular'}}>
+              Loading...
+            </Text>
+          </View>
+        ) : (
+          <View>
+            {hadisData.map((hadis, index) => (
+              <View key={index} style={styles.hadisContainer}>
+                <View style={styles.numberContainer}>
+                  <Text style={styles.number}>{hadis.number}</Text>
+                </View>
+                <View style={styles.textContainer}>
+                  <Text style={styles.arabText}>{hadis.arab}</Text>
+                  <Text style={styles.translationText}>{hadis.id}</Text>
+                </View>
               </View>
-              <View style={styles.textContainer}>
-                <Text style={styles.arabText}>{hadis.arab}</Text>
-                <Text style={styles.translationText}>{hadis.id}</Text>
-              </View>
-            </View>
-          ))}
-        </ScrollView>
-      )}
+            ))}
+          </View>
+        )}
+      </ScrollView>
     </View>
   );
 };
